@@ -1,7 +1,18 @@
-# Local development SQL Server for the Request Management demo.
-# The official image is AMD64-only. On Apple Silicon it runs under emulation
-# (Rosetta / QEMU); see README "SQL Server on ARM hosts".
-# The SA password comes from .env (gitignored; copy .env.example) and is never committed.
+# Request Management — local stack.
+#
+#   docker compose up -d --wait                  SQL Server only (for running API/UI from source; see README)
+#   docker compose --profile app up -d --build   everything: SQL Server, seed, runtime login, API, UI
+#
+# The SQL Server image is AMD64-only. On Apple Silicon it runs under emulation (Rosetta / QEMU); see README
+# "SQL Server on ARM hosts". The API and UI images are multi-arch and run natively.
+# Passwords come from .env (gitignored; copy .env.example) and are never committed.
+# LOCAL DEMO ONLY: the app services run with ASPNETCORE_ENVIRONMENT=Development (Swagger, demo X-Actor-Id identity)
+# and TrustServerCertificate=True for the container's self-signed certificate. Do not deploy this file as is.
+
+x-api-build: &api-build
+  context: ./backend
+  dockerfile: RequestManagement.Api/Dockerfile
+
 services:
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -23,6 +34,60 @@ services:
       timeout: 5s
       retries: 12
       start_period: 30s
+
+  # 1. One-shot: apply migrations and seed the 100K demo dataset (idempotent; a no-op when already seeded).
+  db-seed:
+    profiles: ["app"]
+    build: *api-build
+    image: request-management-api:local
+    command: ["seed"]
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__RequestManagementAdmin: "Server=sqlserver,1433;Database=RequestManagementDemo;User ID=sa;Password=${MSSQL_SA_PASSWORD};Encrypt=True;TrustServerCertificate=True"
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+
+  # 2. One-shot: create/refresh the least-privilege runtime login 'rm_app' (scripts/sql/create-runtime-user.sql).
+  db-runtime-user:
+    profiles: ["app"]
+    image: mcr.microsoft.com/mssql/server:2022-latest   # only for its sqlcmd; no server is started
+    platform: linux/amd64
+    entrypoint: ["/bin/bash", "-c", "SQLCMDPASSWORD=\"$$MSSQL_SA_PASSWORD\" /opt/mssql-tools18/bin/sqlcmd -S sqlserver -U sa -C -b -i /scripts/create-runtime-user.sql"]
+    environment:
+      MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
+      RM_APP_PASSWORD: "${RM_APP_PASSWORD:?Set RM_APP_PASSWORD in .env}"
+    volumes:
+      - ./scripts/sql:/scripts:ro
+    depends_on:
+      db-seed:
+        condition: service_completed_successfully
+
+  # 3. API on http://localhost:5080 (Swagger: /swagger), connecting as rm_app — never as sa.
+  api:
+    profiles: ["app"]
+    build: *api-build
+    image: request-management-api:local
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__RequestManagement: "Server=sqlserver,1433;Database=RequestManagementDemo;User ID=rm_app;Password=${RM_APP_PASSWORD};Encrypt=True;TrustServerCertificate=True"
+    ports:
+      - "127.0.0.1:5080:8080"
+    depends_on:
+      db-runtime-user:
+        condition: service_completed_successfully
+    restart: unless-stopped
+
+  # 4. UI on http://localhost:4200 (nginx serving the production Angular build).
+  ui:
+    profiles: ["app"]
+    build: ./frontend/request-management-ui
+    image: request-management-ui:local
+    ports:
+      - "127.0.0.1:4200:8080"
+    depends_on:
+      - api
+    restart: unless-stopped
 
 volumes:
   rm-sqlserver-data:

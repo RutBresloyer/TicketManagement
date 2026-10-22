@@ -106,6 +106,43 @@ npm start
 
 Windows (PowerShell, no bash): set the three `ConnectionStrings__*` environment variables shown in `scripts/dev-env.sh`, run
 `docker compose up -d --wait`, then the `migrate` and `seed` commands below, and run `scripts/sql/create-runtime-user.sql` with `sqlcmd`.
+Or use the Docker Compose stack below, which needs no local .NET or Node at all.
+
+### Run everything with Docker Compose (no local .NET / Node needed)
+
+```bash
+cp .env.example .env                           # set the two passwords
+docker compose --profile app up -d --build     # SQL Server + seed + runtime login + API + UI
+```
+
+Then open **http://localhost:4200** (UI) and **http://localhost:5080/swagger** (Swagger UI).
+
+| Service | What it does | Lifetime |
+|---|---|---|
+| `sqlserver` | SQL Server 2022 (AMD64 image; emulated on Apple Silicon), data in volume `rm-sqlserver-data` | long-running |
+| `db-seed` | API image running `seed`: migrations + 100K demo data, as `sa` (no-op if already seeded) | exits 0 |
+| `db-runtime-user` | runs `scripts/sql/create-runtime-user.sql` (least-privilege `rm_app` login) | exits 0 |
+| `api` | API on `127.0.0.1:5080`, connects as `rm_app`, non-root container | long-running |
+| `ui` | production Angular build on unprivileged nginx, `127.0.0.1:4200`, security headers + CSP | long-running |
+
+Useful commands:
+
+```bash
+docker compose --profile app ps                 # status (db-seed / db-runtime-user show "Exited (0)" when done)
+docker compose --profile app logs -f api        # API log incl. the SQL EF generates
+docker compose --profile app run --rm db-seed reset-and-seed   # regenerate the demo dataset
+docker compose --profile app down               # stop everything, keep the data volume
+docker compose --profile app down -v            # stop and DELETE the database volume
+```
+
+Plain `docker compose up -d --wait` (no profile) still starts **only SQL Server**, for running the API/UI from source as in the
+steps above. Don't run both at once: the source-run API/UI and the containers use the same ports (5080, 4200).
+The stack is a **local demo**: the containers run with `ASPNETCORE_ENVIRONMENT=Development` (Swagger, demo `X-Actor-Id`) and trust
+the SQL container's self-signed certificate.
+
+Verified on 2026-10-22 (Apple Silicon, Rancher Desktop): images built (API 347 MB, UI 54 MB), both one-shot steps exited 0, the API
+and UI containers run as non-root (`app`, `nginx`), the UI's CSP causes no browser errors, and the same Chrome walkthroughs as above
+(UI incl. 409 and bulk; Swagger GET → PATCH 200 → PATCH 409) passed against the containers. `run --rm db-seed reset-and-seed` regenerated the data in 7.6 s.
 
 ### External SQL Server
 

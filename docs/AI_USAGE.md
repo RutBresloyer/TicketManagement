@@ -39,6 +39,7 @@ Effectively everything in the repository was written by Claude Code in one sessi
 | Swagger UI | Chrome (playwright-core driving the installed browser): `/swagger`, Try it out GET → PATCH → PATCH | 6 operations listed; 200, then 409 `ConcurrencyConflict` with the real token |
 | UI in a real browser | Same tool, scripted walkthrough of http://localhost:4200 | 25-row page; typing "payment" sent **one** request; page 2 kept filters; status saved + history shown; 409 conflict → Refresh shows the other user's status, no overwrite on the server; bulk 2 succeeded / 1 InvalidTransition; an in-flight search was **aborted** (`net::ERR_ABORTED`) when a filter changed |
 | Performance | `scripts/perf/run_perf.py` | docs/PERFORMANCE.md |
+| Docker Compose full stack | `docker compose --profile app up -d --build`, curl checks, Chrome walkthroughs against the containers | seed + runtime-login steps exited 0; API/UI up as non-root; UI security headers + CSP with no browser errors; UI and Swagger walkthroughs passed; `run --rm db-seed reset-and-seed` worked |
 
 ### Mutation checks (do the tests catch the bugs they claim to?)
 
