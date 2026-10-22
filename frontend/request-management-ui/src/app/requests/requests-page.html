@@ -1,0 +1,67 @@
+<app-summary-panel [data]="store.summary()" />
+
+<app-filter-bar />
+
+<app-bulk-update-panel
+  [selected]="selectedRows()"
+  (completed)="onBulkCompleted($event)"
+  (clearSelection)="toggleAll(false)"
+  (reselectFailed)="reselect($event)"
+/>
+
+<section class="results" aria-labelledby="results-heading" [attr.aria-busy]="state().loading">
+  <h2 id="results-heading" class="visually-hidden">Requests</h2>
+
+  @if (state().error; as e) {
+    <div class="callout callout-error" role="alert">
+      <strong>Could not load requests.</strong> {{ e.message }}
+      @for (f of e.fieldErrors; track f) {
+        <div>{{ f }}</div>
+      }
+      <div><button type="button" class="secondary" (click)="store.reload()">Try again</button></div>
+    </div>
+  } @else if (state().result; as result) {
+    @if (result.items.length === 0) {
+      <div class="empty-state" role="status">
+        <p><strong>No requests match these filters.</strong></p>
+        @if (store.hasActiveFilters()) {
+          <button type="button" class="secondary" (click)="store.clearFilters()">
+            Clear filters
+          </button>
+        }
+      </div>
+    } @else {
+      <app-requests-table
+        [items]="result.items"
+        [loading]="state().loading"
+        [sortBy]="store.criteria().sortBy"
+        [sortDirection]="store.criteria().sortDirection"
+        [selectedIds]="selectedIds()"
+        (sort)="store.toggleSort($event)"
+        (open)="openRequest.set($event)"
+        (toggle)="toggle($event.request, $event.selected)"
+        (toggleAll)="toggleAll($event)"
+      />
+    }
+    <app-pagination
+      [page]="result.page"
+      [pageSize]="result.pageSize"
+      [totalCount]="result.totalCount"
+      [totalPages]="result.totalPages"
+      (pageChange)="store.goToPage($event)"
+      (pageSizeChange)="store.setPageSize($event)"
+    />
+  }
+
+  @if (state().loading) {
+    <p class="loading-indicator" role="status" aria-live="polite">Loading requests…</p>
+  }
+</section>
+
+@if (openRequest(); as request) {
+  <app-status-dialog
+    [request]="request"
+    (saved)="onSaved($event)"
+    (closed)="openRequest.set(null)"
+  />
+}

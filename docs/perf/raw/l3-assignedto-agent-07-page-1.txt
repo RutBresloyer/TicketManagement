@@ -1,0 +1,34 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+59399 Approve payment failure alert (REF-059399) Silver Works Holdings 2 3 agent-07 2026-09-30 23:05:50.0000000 +00:00 2026-09-30 23:19:38.0000000 +00:00 0x00000000000278FC
+70070 Configure settlement report (REF-070070) Coastal Gate Retail 4 1 agent-07 2026-09-30 17:42:24.0000000 +00:00 2026-09-30 19:11:36.0000000 +00:00 0x000000000002A2D5
+43132 Reconcile payment failure alert (REF-043132) Urban Point Retail 4 2 agent-07 2026-09-30 07:54:18.0000000 +00:00 2026-09-30 19:07:40.0000000 +00:00 0x0000000000023932
+25995 Approve user access rights (REF-025995) Cedar Valley Systems 1 2 agent-07 2026-09-30 01:51:02.0000000 +00:00 2026-09-30 01:51:02.0000000 +00:00 0x000000000001F5FD
+46018 Investigate payment provider timeout (REF-046018) Silver Bridge Labs 2 1 agent-07 2026-09-29 10:38:52.0000000 +00:00 2026-09-29 19:46:05.0000000 +00:00 0x0000000000024483
+92192 Migrate compliance review (REF-092192) Iron Valley Group 1 1 agent-07 2026-09-29 07:26:34.0000000 +00:00 2026-09-29 07:26:34.0000000 +00:00 0x000000000002F996
+19420 Validate monthly statement (REF-019420) Iron Point Holdings 1 2 agent-07 2026-09-28 18:32:01.0000000 +00:00 2026-09-28 18:32:01.0000000 +00:00 0x000000000001DC35
+78241 Configure tax configuration (REF-078241) Nova Works Group 2 2 agent-07 2026-09-28 11:52:48.0000000 +00:00 2026-09-29 11:46:38.0000000 +00:00 0x000000000002C2E0
+35576 Reconcile merchant account limits (REF-035576) Iron Forge Logistics 2 2 agent-07 2026-09-28 10:13:21.0000000 +00:00 2026-09-29 05:26:31.0000000 +00:00 0x0000000000021B90
+12339 Investigate fraud alert (REF-012339) Lunar Forge Ltd 1 3 agent-07 2026-09-28 07:48:57.0000000 +00:00 2026-09-28 07:48:57.0000000 +00:00 0x000000000001C070
+3077 Update chargeback dispute (REF-003077) Nova River Group 4 2 agent-07 2026-09-27 18:30:54.0000000 +00:00 2026-09-28 23:08:18.0000000 +00:00 0x0000000000019C1E
+95904 Reconcile payment failure alert (REF-095904) Nova Peak Ltd 3 2 agent-07 2026-09-27 07:02:15.0000000 +00:00 2026-09-27 23:28:41.0000000 +00:00 0x0000000000030825
+55909 Escalate chargeback dispute (REF-055909) Granite Point Logistics 4 1 agent-07 2026-09-27 05:28:06.0000000 +00:00 2026-09-28 15:34:56.0000000 +00:00 0x0000000000026B4D
+62085 Validate user access rights (REF-062085) Coastal Field Ltd 4 1 agent-07 2026-09-27 01:32:33.0000000 +00:00 2026-09-29 01:07:29.0000000 +00:00 0x0000000000028385
+47501 Review merchant account limits (REF-047501) Nova Harbor Labs 1 1 agent-07 2026-09-26 22:33:58.0000000 +00:00 2026-09-26 22:33:58.0000000 +00:00 0x0000000000024A54
+81017 Reconcile tax configuration (REF-081017) Urban Peak Partners 4 1 agent-07 2026-09-26 21:52:15.0000000 +00:00 2026-09-29 10:52:18.0000000 +00:00 0x000000000002CDC3
+83861 Document payout schedule (REF-083861) Rapid Point Partners 4 3 agent-07 2026-09-26 20:56:43.0000000 +00:00 2026-09-27 23:36:21.0000000 +00:00 0x000000000002D8EA
+66053 Validate card terminal setup (REF-066053) Urban Valley Labs 3 3 agent-07 2026-09-26 16:28:17.0000000 +00:00 2026-09-28 03:13:44.0000000 +00:00 0x0000000000029315
+8248 Migrate tax configuration (REF-008248) Cedar Peak Holdings 4 1 agent-07 2026-09-26 09:00:32.0000000 +00:00 2026-09-29 13:38:33.0000000 +00:00 0x000000000001B065
+41626 Escalate API integration (REF-041626) Blue Valley Systems 2 2 agent-07 2026-09-26 02:52:01.0000000 +00:00 2026-09-27 07:38:31.0000000 +00:00 0x000000000002334A
+65793 Update webhook delivery (REF-065793) Urban Gate Holdings 4 2 agent-07 2026-09-25 19:24:53.0000000 +00:00 2026-09-29 01:03:27.0000000 +00:00 0x0000000000029210
+97441 Reconcile payout schedule (REF-097441) Urban Works Systems 4 2 agent-07 2026-09-25 18:16:15.0000000 +00:00 2026-09-28 07:14:35.0000000 +00:00 0x0000000000030E2C
+82071 Review merchant account limits (REF-082071) Coastal Gate Retail 1 3 agent-07 2026-09-25 04:28:09.0000000 +00:00 2026-09-25 04:28:09.0000000 +00:00 0x000000000002D1E5
+78122 Update webhook delivery (REF-078122) Prime Point Holdings 1 2 agent-07 2026-09-24 16:46:02.0000000 +00:00 2026-09-24 16:46:02.0000000 +00:00 0x000000000002C269
+26484 Configure card terminal setup (REF-026484) Rapid Field Systems 1 2 agent-07 2026-09-24 06:18:05.0000000 +00:00 2026-09-24 06:18:05.0000000 +00:00 0x000000000001F7E8
+Table 'Requests'. Scan count 1, logical reads 80, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.

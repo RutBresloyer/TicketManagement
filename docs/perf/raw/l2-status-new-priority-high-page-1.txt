@@ -1,0 +1,34 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+1049 Migrate merchant onboarding (REF-001049) Nova Works Group 1 3 agent-33 2026-09-30 18:56:35.0000000 +00:00 2026-09-30 18:56:35.0000000 +00:00 0x000000000001942A
+35749 Update merchant onboarding (REF-035749) Rapid Bridge Retail 1 3 agent-39 2026-09-30 13:32:57.0000000 +00:00 2026-09-30 13:32:57.0000000 +00:00 0x0000000000021C3E
+78160 Configure tax configuration (REF-078160) Bright River Partners 1 3 NULL 2026-09-30 13:01:59.0000000 +00:00 2026-09-30 13:01:59.0000000 +00:00 0x000000000002C28F
+49528 Migrate payout schedule (REF-049528) Green Forge Systems 1 3 agent-30 2026-09-30 10:36:15.0000000 +00:00 2026-09-30 10:36:15.0000000 +00:00 0x0000000000025247
+25136 Review fraud alert (REF-025136) Golden Peak Group 1 3 NULL 2026-09-30 10:04:33.0000000 +00:00 2026-09-30 10:04:33.0000000 +00:00 0x000000000001F29F
+39893 Configure invoice discrepancy (REF-039893) Coastal Gate Retail 1 3 agent-14 2026-09-29 16:17:43.0000000 +00:00 2026-09-29 16:17:43.0000000 +00:00 0x0000000000022C7E
+22773 Migrate monthly statement (REF-022773) Bright Peak Labs 1 3 agent-04 2026-09-29 12:32:10.0000000 +00:00 2026-09-29 12:32:10.0000000 +00:00 0x000000000001E95B
+89937 Escalate refund request (REF-089937) Lunar Harbor Holdings 1 3 agent-30 2026-09-29 11:39:23.0000000 +00:00 2026-09-29 11:39:23.0000000 +00:00 0x000000000002F0BE
+38286 Review merchant account limits (REF-038286) Silver Bridge Labs 1 3 NULL 2026-09-29 10:45:41.0000000 +00:00 2026-09-29 10:45:41.0000000 +00:00 0x0000000000022631
+97869 Escalate payout schedule (REF-097869) Coastal Peak Systems 1 3 agent-33 2026-09-29 08:27:14.0000000 +00:00 2026-09-29 08:27:14.0000000 +00:00 0x0000000000030FD9
+29937 Review refund request (REF-029937) Iron Forge Logistics 1 3 NULL 2026-09-29 06:07:04.0000000 +00:00 2026-09-29 06:07:04.0000000 +00:00 0x0000000000020573
+83143 Migrate settlement report (REF-083143) Silver River Holdings 1 3 agent-31 2026-09-29 03:55:40.0000000 +00:00 2026-09-29 03:55:40.0000000 +00:00 0x000000000002D61A
+53182 Reconcile merchant account limits (REF-053182) Crystal Valley Holdings 1 3 NULL 2026-09-29 01:46:20.0000000 +00:00 2026-09-29 01:46:20.0000000 +00:00 0x000000000002609B
+78471 Configure payment provider timeout (REF-078471) Coastal Valley Partners 1 3 agent-02 2026-09-28 23:04:56.0000000 +00:00 2026-09-28 23:04:56.0000000 +00:00 0x000000000002C3C7
+99578 Update API integration (REF-099578) Prime Harbor Systems 1 3 agent-28 2026-09-28 15:45:38.0000000 +00:00 2026-09-28 15:45:38.0000000 +00:00 0x000000000003168D
+27166 Approve payment provider timeout (REF-027166) Crystal Bridge Systems 1 3 agent-17 2026-09-28 13:29:21.0000000 +00:00 2026-09-28 13:29:21.0000000 +00:00 0x000000000001FA95
+72236 Review payout schedule (REF-072236) Lunar River Systems 1 3 agent-05 2026-09-28 12:55:39.0000000 +00:00 2026-09-28 12:55:39.0000000 +00:00 0x000000000002AB54
+95612 Approve card terminal setup (REF-095612) Rapid Valley Logistics 1 3 agent-10 2026-09-28 11:29:29.0000000 +00:00 2026-09-28 11:29:29.0000000 +00:00 0x00000000000306FF
+36941 Configure webhook delivery (REF-036941) Green Harbor Group 1 3 agent-16 2026-09-28 09:45:24.0000000 +00:00 2026-09-28 09:45:24.0000000 +00:00 0x00000000000220EA
+17969 Approve merchant onboarding (REF-017969) Nova Point Partners 1 3 agent-09 2026-09-28 09:26:08.0000000 +00:00 2026-09-28 09:26:08.0000000 +00:00 0x000000000001D684
+12339 Investigate fraud alert (REF-012339) Lunar Forge Ltd 1 3 agent-07 2026-09-28 07:48:57.0000000 +00:00 2026-09-28 07:48:57.0000000 +00:00 0x000000000001C070
+8541 Document payment failure alert (REF-008541) Urban Valley Labs 1 3 agent-05 2026-09-27 21:28:38.0000000 +00:00 2026-09-27 21:28:38.0000000 +00:00 0x000000000001B18B
+52575 Migrate merchant account limits (REF-052575) Rapid Peak Ltd 1 3 agent-06 2026-09-27 21:22:06.0000000 +00:00 2026-09-27 21:22:06.0000000 +00:00 0x0000000000025E3A
+97235 Migrate user access rights (REF-097235) Golden Forge Retail 1 3 NULL 2026-09-27 20:15:10.0000000 +00:00 2026-09-27 20:15:10.0000000 +00:00 0x0000000000030D5D
+2597 Escalate monthly statement (REF-002597) Granite Gate Retail 1 3 agent-09 2026-09-27 19:36:08.0000000 +00:00 2026-09-27 19:36:08.0000000 +00:00 0x0000000000019A3C
+Table 'Requests'. Scan count 1, logical reads 338, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.

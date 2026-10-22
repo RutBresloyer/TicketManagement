@@ -1,0 +1,34 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+53689 Update settlement report (REF-053689) Blue Harbor Logistics 1 2 agent-04 2026-09-29 17:17:12.0000000 +00:00 2026-09-29 17:17:12.0000000 +00:00 0x0000000000026298
+21550 Reconcile payment failure alert (REF-021550) Blue Harbor Logistics 4 1 agent-24 2026-09-28 04:26:27.0000000 +00:00 2026-09-29 11:34:15.0000000 +00:00 0x000000000001E48F
+71283 Configure payment provider timeout (REF-071283) Blue Harbor Logistics 2 2 agent-14 2026-09-27 12:46:22.0000000 +00:00 2026-09-28 02:55:17.0000000 +00:00 0x000000000002A797
+71878 Investigate merchant onboarding (REF-071878) Blue Harbor Logistics 4 1 agent-14 2026-09-27 03:53:18.0000000 +00:00 2026-09-27 21:04:59.0000000 +00:00 0x000000000002A9EC
+67890 Validate webhook delivery (REF-067890) Blue Harbor Logistics 2 2 NULL 2026-09-25 18:32:20.0000000 +00:00 2026-09-27 03:47:51.0000000 +00:00 0x0000000000029A49
+75282 Update currency conversion fees (REF-075282) Blue Harbor Logistics 2 1 agent-20 2026-09-25 17:21:19.0000000 +00:00 2026-09-27 19:30:35.0000000 +00:00 0x000000000002B746
+58940 Validate merchant onboarding (REF-058940) Blue Harbor Logistics 1 1 NULL 2026-09-23 19:19:35.0000000 +00:00 2026-09-23 19:19:35.0000000 +00:00 0x0000000000027730
+52019 Update API integration (REF-052019) Blue Harbor Logistics 2 2 NULL 2026-09-21 10:28:43.0000000 +00:00 2026-09-24 11:27:11.0000000 +00:00 0x0000000000025C0C
+17423 Escalate invoice discrepancy (REF-017423) Blue Harbor Logistics 4 2 NULL 2026-09-19 21:27:57.0000000 +00:00 2026-09-25 21:54:59.0000000 +00:00 0x000000000001D460
+8225 Approve currency conversion fees (REF-008225) Blue Harbor Logistics 3 2 agent-08 2026-09-19 01:05:42.0000000 +00:00 2026-09-24 17:38:20.0000000 +00:00 0x000000000001B04E
+82323 Update settlement report (REF-082323) Blue Harbor Logistics 3 1 agent-15 2026-09-17 22:50:43.0000000 +00:00 2026-09-20 05:28:52.0000000 +00:00 0x000000000002D2E2
+48407 Document fraud alert (REF-048407) Blue Harbor Logistics 2 1 agent-40 2026-09-14 18:17:13.0000000 +00:00 2026-09-19 17:42:54.0000000 +00:00 0x0000000000024DE1
+95532 Migrate merchant onboarding (REF-095532) Blue Harbor Logistics 1 3 agent-28 2026-09-13 22:06:29.0000000 +00:00 2026-09-13 22:06:29.0000000 +00:00 0x00000000000306AF
+33271 Reconcile refund request (REF-033271) Blue Harbor Logistics 2 3 agent-25 2026-09-12 16:24:32.0000000 +00:00 2026-09-16 10:30:43.0000000 +00:00 0x0000000000021286
+58258 Migrate merchant account limits (REF-058258) Blue Harbor Logistics 4 2 agent-27 2026-09-11 16:47:13.0000000 +00:00 2026-09-14 20:46:36.0000000 +00:00 0x0000000000027483
+67354 Escalate user access rights (REF-067354) Blue Harbor Logistics 1 1 agent-06 2026-09-09 20:37:56.0000000 +00:00 2026-09-09 20:37:56.0000000 +00:00 0x000000000002982F
+87543 Configure payment failure alert (REF-087543) Blue Harbor Logistics 4 3 agent-16 2026-09-06 18:03:04.0000000 +00:00 2026-09-18 22:17:56.0000000 +00:00 0x000000000002E75B
+75135 Document merchant onboarding (REF-075135) Blue Harbor Logistics 3 2 agent-28 2026-09-06 17:57:23.0000000 +00:00 2026-09-14 18:10:00.0000000 +00:00 0x000000000002B6B2
+21267 Migrate payment failure alert (REF-021267) Blue Harbor Logistics 2 1 agent-39 2026-09-05 20:10:13.0000000 +00:00 2026-09-12 10:56:27.0000000 +00:00 0x000000000001E373
+64323 Validate compliance review (REF-064323) Blue Harbor Logistics 3 3 agent-27 2026-09-04 12:37:16.0000000 +00:00 2026-09-14 20:39:07.0000000 +00:00 0x0000000000028C4C
+98417 Review payment failure alert (REF-098417) Blue Harbor Logistics 2 2 NULL 2026-09-02 23:10:57.0000000 +00:00 2026-09-09 22:01:02.0000000 +00:00 0x00000000000311FF
+44314 Approve payment failure alert (REF-044314) Blue Harbor Logistics 4 3 agent-13 2026-08-31 04:35:11.0000000 +00:00 2026-09-04 18:56:34.0000000 +00:00 0x0000000000023DD4
+99957 Migrate invoice discrepancy (REF-099957) Blue Harbor Logistics 4 1 agent-04 2026-08-29 12:08:38.0000000 +00:00 2026-09-10 20:49:46.0000000 +00:00 0x000000000003180A
+97354 Reconcile payment failure alert (REF-097354) Blue Harbor Logistics 3 2 agent-15 2026-08-23 23:04:26.0000000 +00:00 2026-09-09 15:35:17.0000000 +00:00 0x0000000000030DD4
+17805 Validate monthly statement (REF-017805) Blue Harbor Logistics 2 1 agent-07 2026-08-21 15:16:56.0000000 +00:00 2026-09-08 03:14:14.0000000 +00:00 0x000000000001D5DF
+Table 'Requests'. Scan count 1, logical reads 80, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.

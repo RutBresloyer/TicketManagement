@@ -1,0 +1,12 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+1 34979
+2 44962
+3 20059
+Table 'Requests'. Scan count 1, logical reads 775, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 11 ms,  elapsed time = 13 ms.
+
+ SQL Server Execution Times:
+   CPU time = 11 ms,  elapsed time = 13 ms.

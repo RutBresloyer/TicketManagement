@@ -1,0 +1,34 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+31995 Investigate currency conversion fees (REF-031995) Crystal Forge Partners 2 2 agent-15 2026-01-03 08:28:34.0000000 +00:00 2026-04-03 14:15:38.0000000 +00:00 0x0000000000020D85
+73191 Approve chargeback dispute (REF-073191) Urban Harbor Holdings 3 2 agent-24 2026-01-03 08:06:51.0000000 +00:00 2026-04-13 04:41:29.0000000 +00:00 0x000000000002AF13
+23663 Update currency conversion fees (REF-023663) Summit Point Ltd 4 1 agent-01 2026-01-03 08:05:39.0000000 +00:00 2026-05-09 10:00:25.0000000 +00:00 0x000000000001ECD8
+36774 Migrate merchant onboarding (REF-036774) Coastal Harbor Retail 2 1 agent-11 2026-01-03 07:52:16.0000000 +00:00 2026-01-29 12:12:22.0000000 +00:00 0x0000000000022043
+74205 Document merchant onboarding (REF-074205) Atlas Point Systems 4 1 agent-19 2026-01-03 07:28:02.0000000 +00:00 2026-04-28 18:10:55.0000000 +00:00 0x000000000002B30D
+74213 Approve merchant onboarding (REF-074213) Granite River Holdings 2 1 agent-21 2026-01-03 07:26:55.0000000 +00:00 2026-03-11 00:08:33.0000000 +00:00 0x000000000002B315
+54401 Reconcile currency conversion fees (REF-054401) Bright Peak Labs 4 3 agent-29 2026-01-03 07:23:42.0000000 +00:00 2026-05-08 08:57:03.0000000 +00:00 0x0000000000026563
+75531 Reconcile compliance review (REF-075531) Bright Peak Labs 3 3 agent-17 2026-01-03 07:22:27.0000000 +00:00 2026-04-18 17:36:31.0000000 +00:00 0x000000000002B840
+85932 Escalate payment failure alert (REF-085932) Nova Bridge Retail 4 1 agent-11 2026-01-03 07:11:41.0000000 +00:00 2026-05-17 20:57:58.0000000 +00:00 0x000000000002E10A
+75995 Review invoice discrepancy (REF-075995) Prime Forge Logistics 4 1 agent-21 2026-01-03 06:45:05.0000000 +00:00 2026-06-15 21:38:07.0000000 +00:00 0x000000000002BA12
+76008 Document refund request (REF-076008) Iron Point Holdings 1 3 agent-40 2026-01-03 06:35:15.0000000 +00:00 2026-01-03 06:35:15.0000000 +00:00 0x000000000002BA1F
+53807 Update merchant onboarding (REF-053807) Blue Peak Holdings 1 2 agent-23 2026-01-03 06:34:14.0000000 +00:00 2026-01-03 06:34:14.0000000 +00:00 0x000000000002630F
+59594 Investigate payment failure alert (REF-059594) Summit River Retail 4 2 agent-09 2026-01-03 06:21:29.0000000 +00:00 2026-04-20 12:38:56.0000000 +00:00 0x00000000000279C0
+68688 Approve chargeback dispute (REF-068688) Coastal Gate Retail 1 3 agent-25 2026-01-03 06:00:34.0000000 +00:00 2026-01-03 06:00:34.0000000 +00:00 0x0000000000029D6A
+84521 Review invoice discrepancy (REF-084521) Crystal Harbor Ltd 2 1 agent-32 2026-01-03 05:46:08.0000000 +00:00 2026-03-11 08:04:50.0000000 +00:00 0x000000000002DB81
+73066 Validate user access rights (REF-073066) Rapid Point Partners 2 2 agent-40 2026-01-03 05:42:40.0000000 +00:00 2026-02-03 07:59:52.0000000 +00:00 0x000000000002AE95
+20165 Escalate payment provider timeout (REF-020165) Atlas Harbor Partners 4 2 NULL 2026-01-03 05:40:03.0000000 +00:00 2026-04-01 14:53:45.0000000 +00:00 0x000000000001DF21
+84704 Migrate webhook delivery (REF-084704) Vertex River Ltd 2 1 agent-19 2026-01-03 05:29:54.0000000 +00:00 2026-05-26 20:54:17.0000000 +00:00 0x000000000002DC39
+67026 Investigate payout schedule (REF-067026) Urban Point Retail 1 2 NULL 2026-01-03 05:24:38.0000000 +00:00 2026-01-03 05:24:38.0000000 +00:00 0x00000000000296E5
+96068 Validate currency conversion fees (REF-096068) Urban Point Retail 4 3 agent-37 2026-01-03 05:23:56.0000000 +00:00 2026-04-25 05:23:14.0000000 +00:00 0x00000000000308C9
+27082 Update compliance review (REF-027082) Silver Works Holdings 2 1 agent-24 2026-01-03 05:21:57.0000000 +00:00 2026-03-30 03:32:03.0000000 +00:00 0x000000000001FA41
+93172 Review fraud alert (REF-093172) Maple Peak Retail 1 3 NULL 2026-01-03 05:09:27.0000000 +00:00 2026-01-03 05:09:27.0000000 +00:00 0x000000000002FD6E
+57486 Validate payment failure alert (REF-057486) Prime Valley Group 2 2 NULL 2026-01-03 04:50:57.0000000 +00:00 2026-04-04 12:32:11.0000000 +00:00 0x000000000002717C
+6542 Approve webhook delivery (REF-006542) Cedar Forge Labs 4 2 agent-19 2026-01-03 04:49:42.0000000 +00:00 2026-03-19 15:33:28.0000000 +00:00 0x000000000001A9B4
+5858 Document monthly statement (REF-005858) Granite River Holdings 4 1 agent-19 2026-01-03 04:46:30.0000000 +00:00 2026-05-24 19:17:41.0000000 +00:00 0x000000000001A706
+Table 'Requests'. Scan count 1, logical reads 153511, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 49 ms,  elapsed time = 57 ms.
+
+ SQL Server Execution Times:
+   CPU time = 49 ms,  elapsed time = 57 ms.

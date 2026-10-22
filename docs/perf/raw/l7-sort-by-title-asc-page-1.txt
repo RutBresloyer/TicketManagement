@@ -1,0 +1,35 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+94 Approve API integration (REF-000094) Vertex River Ltd 4 1 NULL 2025-10-14 06:50:03.0000000 +00:00 2026-04-07 12:59:57.0000000 +00:00 0x000000000001906B
+141 Approve API integration (REF-000141) Maple Bridge Systems 4 2 agent-36 2026-03-06 23:38:23.0000000 +00:00 2026-07-11 09:05:03.0000000 +00:00 0x000000000001909A
+359 Approve API integration (REF-000359) Nova Peak Ltd 4 2 agent-15 2025-08-26 01:42:15.0000000 +00:00 2026-03-11 05:49:19.0000000 +00:00 0x0000000000019175
+374 Approve API integration (REF-000374) Iron Gate Systems 2 2 agent-20 2026-07-14 19:18:16.0000000 +00:00 2026-08-09 16:02:56.0000000 +00:00 0x0000000000019184
+583 Approve API integration (REF-000583) Golden Point Systems 2 1 agent-33 2026-08-29 08:05:32.0000000 +00:00 2026-09-03 14:59:12.0000000 +00:00 0x0000000000019256
+856 Approve API integration (REF-000856) Crystal Forge Partners 1 2 agent-40 2026-04-18 18:35:43.0000000 +00:00 2026-04-18 18:35:43.0000000 +00:00 0x0000000000019368
+895 Approve API integration (REF-000895) Vertex Harbor Group 1 1 agent-12 2026-05-17 17:09:24.0000000 +00:00 2026-05-17 17:09:24.0000000 +00:00 0x000000000001938F
+1104 Approve API integration (REF-001104) Golden Valley Ltd 1 1 agent-06 2026-02-09 12:30:44.0000000 +00:00 2026-02-09 12:30:44.0000000 +00:00 0x0000000000019461
+1366 Approve API integration (REF-001366) Summit Point Ltd 4 2 agent-21 2026-08-10 08:56:30.0000000 +00:00 2026-09-10 08:59:58.0000000 +00:00 0x0000000000019568
+1449 Approve API integration (REF-001449) Summit Valley Systems 2 3 agent-11 2026-01-29 15:12:13.0000000 +00:00 2026-04-21 19:26:04.0000000 +00:00 0x00000000000195BB
+1705 Approve API integration (REF-001705) Crystal Valley Holdings 3 2 NULL 2025-09-11 10:16:39.0000000 +00:00 2025-11-19 14:54:05.0000000 +00:00 0x00000000000196BC
+1855 Approve API integration (REF-001855) Coastal Valley Partners 1 1 agent-18 2026-07-15 18:07:08.0000000 +00:00 2026-07-15 18:07:08.0000000 +00:00 0x0000000000019753
+1877 Approve API integration (REF-001877) Blue Works Retail 3 3 agent-11 2026-06-18 15:13:58.0000000 +00:00 2026-08-13 14:50:41.0000000 +00:00 0x0000000000019769
+2065 Approve API integration (REF-002065) Rapid Gate Labs 2 3 agent-27 2026-02-05 14:33:48.0000000 +00:00 2026-04-14 22:35:15.0000000 +00:00 0x0000000000019826
+2426 Approve API integration (REF-002426) Nova Gate Labs 3 2 agent-25 2026-06-12 13:24:48.0000000 +00:00 2026-07-28 06:55:04.0000000 +00:00 0x0000000000019990
+2432 Approve API integration (REF-002432) Bright Harbor Systems 1 2 NULL 2025-06-03 19:31:21.0000000 +00:00 2025-06-03 19:31:21.0000000 +00:00 0x0000000000019996
+2491 Approve API integration (REF-002491) Lunar Bridge Group 2 3 NULL 2026-06-20 11:58:30.0000000 +00:00 2026-07-31 08:15:52.0000000 +00:00 0x00000000000199D1
+2528 Approve API integration (REF-002528) Urban Harbor Holdings 3 1 agent-09 2026-01-20 15:05:42.0000000 +00:00 2026-04-24 14:44:04.0000000 +00:00 0x00000000000199F6
+2612 Approve API integration (REF-002612) Bright Forge Logistics 1 1 agent-22 2025-12-02 17:11:35.0000000 +00:00 2025-12-02 17:11:35.0000000 +00:00 0x0000000000019A4B
+2744 Approve API integration (REF-002744) Iron Works Partners 2 2 agent-35 2026-05-26 18:11:53.0000000 +00:00 2026-07-08 02:46:04.0000000 +00:00 0x0000000000019ACF
+2759 Approve API integration (REF-002759) Lunar Point Retail 3 1 agent-12 2025-09-17 05:40:19.0000000 +00:00 2025-10-07 16:16:20.0000000 +00:00 0x0000000000019ADE
+3496 Approve API integration (REF-003496) Crystal River Logistics 4 2 NULL 2026-06-04 23:31:24.0000000 +00:00 2026-07-12 09:20:18.0000000 +00:00 0x0000000000019DC2
+3501 Approve API integration (REF-003501) Nova Peak Ltd 3 2 agent-06 2026-06-17 15:27:11.0000000 +00:00 2026-07-27 08:30:49.0000000 +00:00 0x0000000000019DC7
+3575 Approve API integration (REF-003575) Blue Bridge Partners 4 3 agent-08 2025-04-12 13:46:07.0000000 +00:00 2025-10-23 10:35:19.0000000 +00:00 0x0000000000019E12
+3748 Approve API integration (REF-003748) Maple Gate Ltd 1 1 NULL 2026-04-20 01:27:05.0000000 +00:00 2026-04-20 01:27:05.0000000 +00:00 0x0000000000019EBF
+Table 'Worktable'. Scan count 0, logical reads 0, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+Table 'Requests'. Scan count 7, logical reads 2654, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 104 ms,  elapsed time = 20 ms.
+
+ SQL Server Execution Times:
+   CPU time = 104 ms,  elapsed time = 20 ms.

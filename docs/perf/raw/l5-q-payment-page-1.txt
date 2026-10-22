@@ -1,0 +1,34 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+59399 Approve payment failure alert (REF-059399) Silver Works Holdings 2 3 agent-07 2026-09-30 23:05:50.0000000 +00:00 2026-09-30 23:19:38.0000000 +00:00 0x00000000000278FC
+38454 Migrate payment failure alert (REF-038454) Coastal Bridge Labs 3 2 NULL 2026-09-30 21:15:47.0000000 +00:00 2026-09-30 22:18:39.0000000 +00:00 0x00000000000226D9
+2085 Review payment provider timeout (REF-002085) Green Bridge Holdings 1 1 agent-03 2026-09-30 19:53:33.0000000 +00:00 2026-09-30 19:53:33.0000000 +00:00 0x000000000001983A
+49015 Document payment failure alert (REF-049015) Green Peak Logistics 2 2 agent-19 2026-09-30 19:13:00.0000000 +00:00 2026-09-30 20:49:00.0000000 +00:00 0x0000000000025044
+44544 Approve payment provider timeout (REF-044544) Crystal Bridge Systems 2 1 agent-12 2026-09-30 19:07:01.0000000 +00:00 2026-09-30 20:54:18.0000000 +00:00 0x0000000000023EBB
+1360 Document payment failure alert (REF-001360) Cedar Valley Systems 4 3 NULL 2026-09-30 16:42:02.0000000 +00:00 2026-09-30 19:01:29.0000000 +00:00 0x0000000000019562
+27267 Update payment failure alert (REF-027267) Northern Field Logistics 4 3 agent-10 2026-09-30 15:04:20.0000000 +00:00 2026-09-30 19:33:58.0000000 +00:00 0x000000000001FAFA
+60110 Update payment provider timeout (REF-060110) Lunar Point Retail 4 1 agent-08 2026-09-30 13:29:02.0000000 +00:00 2026-09-30 16:11:10.0000000 +00:00 0x0000000000027BC6
+39992 Document payment provider timeout (REF-039992) Summit Harbor Logistics 2 2 agent-30 2026-09-30 12:36:31.0000000 +00:00 2026-09-30 14:04:58.0000000 +00:00 0x0000000000022CE1
+15523 Configure payment failure alert (REF-015523) Vertex Harbor Group 3 2 agent-38 2026-09-30 12:28:23.0000000 +00:00 2026-09-30 15:33:57.0000000 +00:00 0x000000000001CCEC
+52496 Migrate payment failure alert (REF-052496) Coastal Valley Partners 3 2 agent-14 2026-09-30 12:22:44.0000000 +00:00 2026-09-30 17:19:42.0000000 +00:00 0x0000000000025DEA
+93536 Validate payment provider timeout (REF-093536) Crystal River Logistics 4 2 agent-01 2026-09-30 12:06:55.0000000 +00:00 2026-09-30 17:17:11.0000000 +00:00 0x000000000002FEDB
+61821 Reconcile payment provider timeout (REF-061821) Nova Forge Holdings 2 3 agent-12 2026-09-30 11:29:34.0000000 +00:00 2026-09-30 16:01:24.0000000 +00:00 0x000000000002827C
+60440 Configure payment provider timeout (REF-060440) Atlas Field Holdings 4 1 agent-26 2026-09-30 08:38:10.0000000 +00:00 2026-09-30 15:16:47.0000000 +00:00 0x0000000000027D12
+43132 Reconcile payment failure alert (REF-043132) Urban Point Retail 4 2 agent-07 2026-09-30 07:54:18.0000000 +00:00 2026-09-30 19:07:40.0000000 +00:00 0x0000000000023932
+56976 Escalate payment failure alert (REF-056976) Lunar Point Retail 4 2 agent-25 2026-09-30 07:41:41.0000000 +00:00 2026-09-30 14:10:26.0000000 +00:00 0x0000000000026F7C
+89489 Validate payment provider timeout (REF-089489) Crystal Point Group 4 2 NULL 2026-09-30 07:13:08.0000000 +00:00 2026-09-30 15:13:05.0000000 +00:00 0x000000000002EEFC
+98596 Migrate payment provider timeout (REF-098596) Blue Bridge Partners 4 1 agent-32 2026-09-30 07:09:31.0000000 +00:00 2026-09-30 17:16:15.0000000 +00:00 0x00000000000312B3
+40439 Configure payment failure alert (REF-040439) Northern Works Systems 2 2 agent-01 2026-09-30 06:25:23.0000000 +00:00 2026-09-30 08:27:12.0000000 +00:00 0x0000000000022EA2
+30501 Configure payment failure alert (REF-030501) Crystal Harbor Ltd 4 2 agent-32 2026-09-30 06:03:07.0000000 +00:00 2026-09-30 14:07:34.0000000 +00:00 0x00000000000207A9
+38563 Validate payment provider timeout (REF-038563) Golden River Labs 2 2 agent-24 2026-09-30 04:03:13.0000000 +00:00 2026-09-30 09:01:38.0000000 +00:00 0x0000000000022747
+25717 Approve payment failure alert (REF-025717) Urban Peak Partners 3 2 agent-28 2026-09-30 02:00:01.0000000 +00:00 2026-09-30 05:35:57.0000000 +00:00 0x000000000001F4E6
+88530 Document payment provider timeout (REF-088530) Golden Bridge Logistics 3 3 agent-29 2026-09-29 23:23:34.0000000 +00:00 2026-09-30 01:11:43.0000000 +00:00 0x000000000002EB3A
+67586 Configure payment failure alert (REF-067586) Northern Valley Labs 2 2 agent-05 2026-09-29 21:19:14.0000000 +00:00 2026-09-30 03:32:22.0000000 +00:00 0x0000000000029918
+34581 Document payment failure alert (REF-034581) Iron Gate Systems 4 1 NULL 2026-09-29 16:18:19.0000000 +00:00 2026-09-30 06:57:56.0000000 +00:00 0x00000000000217A9
+Table 'Requests'. Scan count 1, logical reads 736, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 1 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 1 ms.

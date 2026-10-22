@@ -1,0 +1,12 @@
+SQL Server parse and compile time: 
+   CPU time = 0 ms, elapsed time = 0 ms.
+5 3 4 2026-08-22 10:50:24.0000000 +00:00 agent-24
+4 2 3 2026-07-30 04:15:00.0000000 +00:00 agent-24
+3 1 2 2026-06-26 14:33:04.0000000 +00:00 agent-24
+Table 'RequestStatusHistory'. Scan count 1, logical reads 12, physical reads 0, page server reads 0, read-ahead reads 0, page server read-ahead reads 0, lob logical reads 0, lob physical reads 0, lob page server reads 0, lob read-ahead reads 0, lob page server read-ahead reads 0.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.
+
+ SQL Server Execution Times:
+   CPU time = 0 ms,  elapsed time = 0 ms.

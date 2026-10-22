@@ -1,0 +1,41 @@
+<header class="app-header">
+  <h1>Request Management</h1>
+  <div class="actor">
+    <label for="actor-id"
+      >Demo actor <span class="dev-tag">development only · not authentication</span></label
+    >
+    <input
+      id="actor-id"
+      [value]="actor.actorId()"
+      (input)="setActor($event)"
+      [pattern]="actorPattern"
+      maxlength="64"
+      autocomplete="off"
+      aria-describedby="actor-help"
+      [attr.aria-invalid]="!actor.isValid()"
+    />
+    <small id="actor-help" [class.inline-error]="!actor.isValid()">
+      Sent as X-Actor-Id and recorded in the history. 3–64 letters, digits, '.', '_' or '-'.
+    </small>
+  </div>
+</header>
+
+<main class="page">
+  <app-requests-page />
+</main>
+
+<div class="toasts" aria-live="polite" aria-atomic="false">
+  @for (n of notifications.notifications(); track n.id) {
+    <div class="toast" [attr.data-kind]="n.kind" role="status">
+      <span>{{ n.text }}</span>
+      <button
+        type="button"
+        class="icon-button"
+        aria-label="Dismiss notification"
+        (click)="notifications.dismiss(n.id)"
+      >
+        ✕
+      </button>
+    </div>
+  }
+</div>

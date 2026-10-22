@@ -1,0 +1,23 @@
+# Local secrets — never commit
+.env
+*.env.local
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+*.trx
+
+# Node / Angular
+node_modules/
+dist/
+.angular/
+coverage/
+
+# IDE / OS
+.idea/
+.DS_Store
+*.swp
