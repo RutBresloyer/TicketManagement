@@ -54,7 +54,7 @@ flowchart LR
 | Angular | One page; a store owns the query pipeline; an API service owns all URLs; typed DTOs. |
 
 Repository layout: `backend/RequestManagement.Api` (API), `backend/RequestManagement.Tests` (xUnit), `frontend/request-management-ui`
-(Angular), `scripts/` (setup, demo, SQL, perf), `docs/`.
+(Angular), `scripts/` (setup and demo as bash + PowerShell, SQL, perf), `docs/`.
 
 ## Versions
 
@@ -73,7 +73,8 @@ Exact versions used and verified for this submission (2026-10-22):
 
 ## Prerequisites
 
-- .NET SDK 10.0.201+ · Node.js 24.15+ (Angular 22 requires `^22.22.3 || ^24.15.0 || >=26`) · Docker with Compose v2 · bash/zsh.
+- .NET SDK 10.0.201+ · Node.js 24.15+ (Angular 22 requires `^22.22.3 || ^24.15.0 || >=26`) · Docker with Compose v2 ·
+  bash/zsh on macOS/Linux, or PowerShell on Windows (Windows PowerShell 5.1 or PowerShell 7+; see [Windows](#windows-powershell)).
 - **SQL Server on ARM hosts:** the official SQL Server image is **AMD64-only**. `docker-compose.yml` pins `platform: linux/amd64`.
   On Apple Silicon this runs under emulation; it was verified here with Rancher Desktop + Rosetta (`docker info` shows
   `lima-vm.io/rosetta`). Docker Desktop needs "Use Rosetta for x86/amd64 emulation" enabled. Without working emulation, use any
@@ -104,9 +105,48 @@ npm start
 (creates `rm_app`), `dotnet run … -- seed`. Expected end of output:
 `Rows: Requests=100,000, RequestStatusHistory=133,740`.
 
-Windows (PowerShell, no bash): set the three `ConnectionStrings__*` environment variables shown in `scripts/dev-env.sh`, run
-`docker compose up -d --wait`, then the `migrate` and `seed` commands below, and run `scripts/sql/create-runtime-user.sql` with `sqlcmd`.
-Or use the Docker Compose stack below, which needs no local .NET or Node at all.
+### Windows (PowerShell)
+
+Every bash script has a PowerShell counterpart next to it that runs the same steps. No bash, WSL, curl or Python is needed
+(Python only for the optional performance script).
+
+```powershell
+# 0. Windows client editions block .ps1 files by default. Allow local scripts for THIS window only (not saved anywhere):
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned
+
+# 1. Local secrets (gitignored). Put two strong passwords in .env (see the comments in the file).
+Copy-Item .env.example .env
+
+# 2. SQL Server + migrations + least-privilege runtime login + 100K seed (idempotent)
+.\scripts\dev-db-setup.ps1
+
+# 3. API on http://localhost:5080  (Swagger: http://localhost:5080/swagger)
+.\scripts\dev-env.ps1
+dotnet run --project backend/RequestManagement.Api --launch-profile http
+
+# 4. UI on http://localhost:4200  (second window)
+cd frontend/request-management-ui
+npm ci
+npm start
+```
+
+| macOS / Linux (bash) | Windows (PowerShell) | What it does |
+|---|---|---|
+| `./scripts/dev-db-setup.sh` | `.\scripts\dev-db-setup.ps1` | Start SQL Server, migrate, create `rm_app`, seed |
+| `source scripts/dev-env.sh` | `.\scripts\dev-env.ps1` | Set the three `ConnectionStrings__*` variables in the current terminal (repeat in every new one) |
+| `scripts/demo-api-flow.sh [base-url]` | `.\scripts\demo-api-flow.ps1 [base-url]` | 200 → 409 → 422 → history → bulk → summary against a running API |
+| `python3 -I scripts/perf/run_perf.py` | `py -3 -I scripts\perf\run_perf.py` | Performance measurements ([docs/PERFORMANCE.md](docs/PERFORMANCE.md)) |
+
+- `dev-env.ps1` does not need to be dot-sourced: a script can set the environment variables of its PowerShell window. Elsewhere
+  in this README, read `source scripts/dev-env.sh` as `.\scripts\dev-env.ps1` and `export NAME='…'` as `$env:NAME = '…'`.
+- Docker Desktop must use Linux containers (its default). `dev-db-setup.ps1` stops at the first failing step, like the bash version.
+- `demo-api-flow.ps1` accepts plain `http://` only for localhost; for any other host pass an `https://` URL.
+- `.gitattributes` keeps `*.sh`, `*.sql`, `*.conf` and `Dockerfile` with LF line endings in Windows checkouts, so the bash scripts
+  also run from Git Bash or WSL and the files used inside the Linux containers are the ones that were tested.
+- **Not yet verified on Windows:** the PowerShell scripts mirror the bash scripts step for step, but every run recorded in this
+  README was done on macOS.
+
+Or use the Docker Compose stack below, which needs no local .NET or Node at all (the same commands work in PowerShell).
 
 ### Run everything with Docker Compose (no local .NET / Node needed)
 
@@ -121,7 +161,7 @@ Then open **http://localhost:4200** (UI) and **http://localhost:5080/swagger** (
 |---|---|---|
 | `sqlserver` | SQL Server 2022 (AMD64 image; emulated on Apple Silicon), data in volume `rm-sqlserver-data` | long-running |
 | `db-seed` | API image running `seed`: migrations + 100K demo data, as `sa` (no-op if already seeded) | exits 0 |
-| `db-runtime-user` | runs `scripts/sql/create-runtime-user.sql` (least-privilege `rm_app` login) | exits 0 |
+| `db-runtime-user` | runs `scripts/sql/create-runtime-user.sql` (least-privilege `rm_app` login), copied into a small image at build time | exits 0 |
 | `api` | API on `127.0.0.1:5080`, connects as `rm_app`, non-root container | long-running |
 | `ui` | production Angular build on unprivileged nginx, `127.0.0.1:4200`, security headers + CSP | long-running |
 
@@ -134,6 +174,10 @@ docker compose --profile app run --rm db-seed reset-and-seed   # regenerate the 
 docker compose --profile app down               # stop everything, keep the data volume
 docker compose --profile app down -v            # stop and DELETE the database volume
 ```
+
+The stack bind-mounts **no host folder** (everything reaches the containers through build contexts and a named volume), so it
+does not depend on Docker Desktop file sharing or Windows path translation. After editing `scripts/sql/create-runtime-user.sql`,
+keep `--build` so the `db-runtime-user` image picks up the change.
 
 Plain `docker compose up -d --wait` (no profile) still starts **only SQL Server**, for running the API/UI from source as in the
 steps above. Don't run both at once: the source-run API/UI and the containers use the same ports (5080, 4200).
@@ -155,6 +199,9 @@ dotnet run --project backend/RequestManagement.Api --launch-profile http -- seed
 RM_APP_PASSWORD='<new password>' sqlcmd -S myhost -U <admin> -i scripts/sql/create-runtime-user.sql   # edit the DB name in the script if not RequestManagementDemo
 export ConnectionStrings__RequestManagement='Server=myhost;Database=RequestManagementDemo;User ID=rm_app;Password=<…>;Encrypt=True'
 ```
+
+PowerShell: use `$env:ConnectionStrings__RequestManagementAdmin = '…'` instead of `export`, and for `sqlcmd` set
+`$env:RM_APP_PASSWORD = '…'` first and `Remove-Item Env:RM_APP_PASSWORD` afterwards.
 
 ## Configuration
 
@@ -200,12 +247,13 @@ self-signed certificate. Outside Development the API enforces HTTPS redirection 
 | `GET /health` | process health |
 
 Full request/response pairs with **real runtime tokens**, including a deliberately provoked `409`: [docs/API_EXAMPLES.md](docs/API_EXAMPLES.md).
-Reproduce them: `scripts/demo-api-flow.sh` (makes real changes; `reset-and-seed` restores the dataset).
+Reproduce them: `scripts/demo-api-flow.sh`, or `.\scripts\demo-api-flow.ps1` on Windows (makes real changes; `reset-and-seed`
+restores the dataset).
 
 ## Tests
 
 ```bash
-source scripts/dev-env.sh                          # provides ConnectionStrings__RequestManagementTests
+source scripts/dev-env.sh                          # provides ConnectionStrings__RequestManagementTests (Windows: .\scripts\dev-env.ps1)
 dotnet test                                        # all backend tests (needs SQL Server)
 dotnet test --filter "Category!=Integration"       # unit + smoke only (no database)
 
@@ -230,7 +278,7 @@ not skipped or faked); the unit/smoke filter above still runs. The test fixture 
 ## Seeding and resetting demo data
 
 ```bash
-source scripts/dev-env.sh
+source scripts/dev-env.sh                                                                    # Windows: .\scripts\dev-env.ps1
 dotnet run --project backend/RequestManagement.Api --launch-profile http -- migrate          # apply migrations only
 dotnet run --project backend/RequestManagement.Api --launch-profile http -- seed             # migrate + seed if absent (idempotent)
 dotnet run --project backend/RequestManagement.Api --launch-profile http -- reset-and-seed   # Development + demo DB only: delete & regenerate
@@ -307,8 +355,10 @@ data or personal data is used anywhere, including tests and screenshots.
 - The `.env` file holds local database passwords; leaking it exposes the dev database.
 
 **Secure handling steps**
-- Secrets only in `.env` (gitignored; keep it `chmod 600`) / environment / user-secrets; production: a managed
-  secret store. `scripts/dev-env.sh` never prints them; the CLI prints server/database only; SQL scripts read passwords from env vars.
+- Secrets only in `.env` (gitignored; keep it `chmod 600`, on Windows `icacls .env /inheritance:r /grant:r "$(whoami):F"`) /
+  environment / user-secrets; production: a managed secret store. `scripts/dev-env.sh` and `dev-env.ps1` never print them (the
+  PowerShell setup also removes `RM_APP_PASSWORD` from its session when done); the CLI prints server/database only; SQL scripts
+  read passwords from env vars.
 - Least privilege: the API runs as `rm_app` (SELECT; UPDATE on `Status`/`UpdatedAt` only; INSERT on history; no DDL/DELETE).
   `sa` is used only for migrations, seeding and tests on the loopback-bound local container.
 - TLS: `Encrypt=True` on SQL connections; HTTPS redirection + HSTS outside Development; use CA-signed certificates and

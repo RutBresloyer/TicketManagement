@@ -1,0 +1,7 @@
+# Line endings. Git for Windows checks text files out with CRLF by default (core.autocrlf=true); files that run or are
+# read inside Linux containers keep the LF endings they were tested with (bash rejects CRLF: "$'\r': command not found").
+* text=auto
+*.sh text eol=lf
+*.sql text eol=lf
+*.conf text eol=lf
+Dockerfile text eol=lf

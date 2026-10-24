@@ -49,16 +49,22 @@ services:
         condition: service_healthy
 
   # 2. One-shot: create/refresh the least-privilege runtime login 'rm_app' (scripts/sql/create-runtime-user.sql).
+  #    The script is copied into the image at build time instead of bind-mounted: a bind mount needs the Docker daemon to
+  #    see the host folder, which fails on some Windows / Docker Desktop setups (it then mounts an empty folder), while the
+  #    build context is uploaded by the client and works wherever the build works.
   db-runtime-user:
     profiles: ["app"]
-    image: mcr.microsoft.com/mssql/server:2022-latest   # only for its sqlcmd; no server is started
+    build:
+      context: ./scripts/sql
+      dockerfile_inline: |
+        FROM mcr.microsoft.com/mssql/server:2022-latest
+        COPY create-runtime-user.sql /scripts/
+    image: request-management-db-runtime-user:local   # SQL Server image only for its sqlcmd; no server is started
     platform: linux/amd64
     entrypoint: ["/bin/bash", "-c", "SQLCMDPASSWORD=\"$$MSSQL_SA_PASSWORD\" /opt/mssql-tools18/bin/sqlcmd -S sqlserver -U sa -C -b -i /scripts/create-runtime-user.sql"]
     environment:
       MSSQL_SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
       RM_APP_PASSWORD: "${RM_APP_PASSWORD:?Set RM_APP_PASSWORD in .env}"
-    volumes:
-      - ./scripts/sql:/scripts:ro
     depends_on:
       db-seed:
         condition: service_completed_successfully
